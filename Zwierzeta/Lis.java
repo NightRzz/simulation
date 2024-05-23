@@ -91,28 +91,28 @@ public class Lis extends Zwierze {
             return def;
         } else if (def.getID() == getID()) { // Zwierzeta.Owca defends
             if (def.getSila() > off.getSila()) {
-                System.out.println(def.getImie() + " wins against " + off.getImie());
+                System.out.println(def.getImie() + " wygrywa z " + off.getImie());
                 return def;
             } else if (def.getSila() == off.getSila()) {
-                System.out.println(off.getImie() + " wins against " + def.getImie());
+                System.out.println(off.getImie() + " wygrywa z " + def.getImie());
                 return off;
             } else {
-                System.out.println(def.getImie() + " loses against " + off.getImie());
+                System.out.println(def.getImie() + " przegrywa z " + off.getImie());
                 return off;
             }
         } else if (off.getID() == getID()) { // Zwierzeta.Owca attacks
             if (off.getSila() > def.getSila()) {
                 if (off == def.kolizja(off, def, plansza, szerokosc, wysokosc)) {
-                    System.out.println(off.getImie() + " wins against " + def.getImie());
+                    System.out.println(off.getImie() + " wygrywa z " + def.getImie());
                     return off;
                 } else if (def.zolwodparlatak) {
                     return def;
                 }
             } else if (off.getSila() == def.getSila()) {
-                System.out.println(off.getImie() + " wins against " + def.getImie());
+                System.out.println(off.getImie() + " wygrywa z " + def.getImie());
                 return off;
             } else {
-                System.out.println(off.getImie() + " loses against " + def.getImie());
+                System.out.println(off.getImie() + " przegrywa z " + def.getImie());
                 return def;
             }
         }

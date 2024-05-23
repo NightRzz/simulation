@@ -13,9 +13,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Swiat extends JFrame {
@@ -23,6 +22,7 @@ public class Swiat extends JFrame {
     public static Swiat okno;
     private static JTextArea logArea;
     private int szerokosc;
+    private Map<Character, Color> colorMap;
     private int wysokosc;
     public static Organizm[][] plansza;
 
@@ -40,7 +40,18 @@ public class Swiat extends JFrame {
         }
         setTitle("Yuriy Dyedyk");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        colorMap = new HashMap<>();
+        colorMap.put('A', new Color(168, 131, 25, 127)); // Czerwony dla Antylopa
+        colorMap.put('O', new Color(237, 227, 199, 127)); // Zielony dla Owca
+        colorMap.put('W', new Color(117, 115, 110, 127)); // Niebieski dla Wilk
+        colorMap.put('L', new Color(217, 138, 2, 127)); // Żółty dla Lisa
+        colorMap.put('Z', new Color(189, 165, 115, 127)); // Szary dla Żółwia
+        colorMap.put('T', new Color(7, 242, 11, 127)); // Zielony dla Trawy
+        colorMap.put('M', new Color(225, 232, 26, 127)); // Biały dla Mlecz
+        colorMap.put('J', new Color(11, 8, 61, 127)); // Czarny dla WilczeJagody
+        colorMap.put('G', new Color(219, 101, 86, 127)); // Pomarańczowy dla Guarana
+        colorMap.put('B', new Color(176, 222, 162, 127)); // Fioletowy dla Barszcz
+        colorMap.put('C', new Color(242, 229, 203, 127));
         grid = new JPanel();
         grid.setLayout(new GridLayout(wysokosc, szerokosc));
 
@@ -98,6 +109,11 @@ public class Swiat extends JFrame {
 
         setLocationRelativeTo(null);
     }
+
+    public Map<Character, Color> getColorMap() {
+        return colorMap;
+    }
+
     private void initializeGrid() {
         grid.removeAll();
 
@@ -111,6 +127,7 @@ public class Swiat extends JFrame {
                     if (organizm != null && organizm.getX() == i && organizm.getY() == j && organizm.getSila() > -1 && organizm.getInicjatywa() > -1) {
                         JLabel label = new JLabel(String.valueOf(organizm.getID()));
                         label.setOpaque(true);
+                        label.setBackground(colorMap.get(organizm.getID()));
                         if(szerokosc+wysokosc>30){
                             label.setFont(label.getFont().deriveFont((szerokosc+wysokosc)*0.35f));
                         }else label.setFont(label.getFont().deriveFont((szerokosc+wysokosc)*1.5f));

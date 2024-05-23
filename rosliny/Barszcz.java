@@ -45,7 +45,7 @@ public class Barszcz extends Roslina {
                             (org.getX() == getX() + 1 && org.getY() == getY()) ||
                             (org.getY() == getY() - 1 && org.getX() == getX()) ||
                             (org.getY() == getY() + 1 && org.getX() == getX()))) {
-                System.out.println(org.getImie() + " umiera przez rosliny.Barszcz Sosnowskiego");
+                System.out.println(org.getImie() + " umiera przez Barszcz Sosnowskiego");
                 plansza[org.getX()][org.getY()] = null;
                 gra.set(i, null);
             }
