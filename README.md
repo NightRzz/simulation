@@ -1,5 +1,6 @@
 # World Simulation
 ## Object Oriented Programming project in Java
+![simulation](https://i.imgur.com/Qoscblv.png)  
 
 The goal of the project is to write an object-oriented simulation application in Java. For visualization the graphical library Swing is used.
 
@@ -21,6 +22,6 @@ There are 2 ways to control the simulation:
 
 The application also allows you to save and load the current state of the simulation. On startup, the simulation world is filled with creatures in random order
 
-![simulation](https://i.imgur.com/Qoscblv.png)
+
 
 
