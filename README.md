@@ -15,7 +15,7 @@ These classes are expanded into subspecies, which have their own behavioral and 
 | Sonchus | 0 | Makes three attempts to spread in one turn. | - |
 | Guaranna | 0 | - | Increases the strength of the animal that ate this plant by 3. |
 | Belladonna | 99 | - | The animal that ate the plant dies. | 
-| Heracleum sosnowskyi | 10 | Kills all animals in its vicinity except the cyber-sheep | The animal that ate the plant dies except the cyber-sheep. |  
+| Heracleum sosnowskyi | 10 | Kills all animals in its vicinity. | The animal that ate the plant dies. |  
  
 | Animal | Strength | Initiative | action() | collision() |
 | :--------: | :--------: | :--------: | :--------: | :--------: |
